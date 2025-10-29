@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -121,8 +121,8 @@
 
         MOUSE {
             bindings = <
-&mkp MB5          &trans        &trans        &trans  &trans                       &trans  &trans    &trans    &trans    &trans
-&mkp MB4          &trans        &trans        &trans  &trans                       &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans            &trans        &trans        &trans  &trans                       &trans  &trans    &trans    &trans    &trans
+&trans            &trans        &trans        &trans  &trans                       &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
 &kp LEFT_SHIFT    &trans        &trans        &trans  &trans                       &trans  &trans    &trans    &trans    &trans
 &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &trans  &trans  &kp SPACE    &trans  &trans            &trans    &trans    &trans
             >;
@@ -182,10 +182,10 @@
 
         ARROW {
             bindings = <
-&trans          &kp UP_ARROW    &trans           &trans  &trans                         &trans          &trans  &trans  &trans  &trans
-&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans                         &trans          &trans  &trans  &trans  &trans
-&trans          &trans          &trans           &trans  &trans                         &trans          &trans  &trans  &trans  &trans
-&trans          &trans          &trans           &trans  &trans  &trans    &bootloader  &studio_unlock          &trans  &trans  &kp LEFT_SHIFT
+&trans          &kp HOME        &kp UP_ARROW    &kp END          &trans                         &trans          &kp HOME        &kp UP_ARROW    &kp END          &trans
+&trans          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans                         &trans          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&kp LEFT_SHIFT  &kp PAGE_UP     &trans          &kp PAGE_DOWN    &trans                         &trans          &kp PAGE_UP     &trans          &kp PAGE_DOWN    &kp RIGHT_SHIFT
+&kp LEFT_SHIFT  &trans          &trans          &trans           &trans  &trans    &bootloader  &studio_unlock                  &trans          &trans           &kp LEFT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
