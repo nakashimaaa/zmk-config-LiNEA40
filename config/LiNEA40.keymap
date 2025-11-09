@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -135,10 +135,10 @@
 &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)                           &trans  &kp LS(NUMBER_9)  &kp LS(N0)         &trans         &kp DELETE
 &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(NUMBER_0)                           &trans  &kp MINUS         &kp EQUAL          &kp SEMICOLON  &kp SQT
 &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &bt BT_SEL 4                               &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp GRAVE      &kp BACKSLASH
-&bt BT_CLR        &bt BT_CLR_ALL    &trans            &trans            &kp LA(Z)         &kp LA(LS(Z))    &trans  &trans                    &trans             &trans         &trans
+&bt BT_CLR        &bt BT_CLR_ALL    &trans            &trans            &kp LC(Z)         &kp LS(LC(Z))    &trans  &trans                    &trans             &trans         &trans
             >;
 
-            sensor-bindings = <&re_kp LC(MINUS) LC(SEMICOLON)>;
+            sensor-bindings = <&re_kp LC(MINUS) LC(EQUAL)>;
         };
 
         //3
