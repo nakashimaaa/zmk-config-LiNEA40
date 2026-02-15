@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -113,10 +113,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E               &kp R   &kp T                              &kp Y  &kp U  &kp I           &kp O             &kp P
-&kp A             &kp S         &kp D               &kp F   &kp G                              &kp H  &kp J  &kp K           &kp L             &kp BACKSPACE
-&mt LEFT_SHIFT Z  &kp X         &kp C               &kp V   &kp B                              &kp N  &kp M  &kp COMMA       &kp DOT           &kp SLASH
-&mt LCTRL ESC     &kp LEFT_WIN  &mt LEFT_ALT GRAVE  &tog 6  &lt 3 TAB  &kp SPACE    &kp ENTER  &mo 2         &kp LEFT_SHIFT  &kp LEFT_CONTROL  &mo 4
+&kp Q             &kp W         &kp E               &kp R   &kp T                              &kp Y  &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S         &kp D               &kp F   &kp G                              &kp H  &kp J  &kp K      &kp L    &kp BACKSPACE
+&mt LEFT_SHIFT Z  &kp X         &kp C               &kp V   &kp B                              &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&mt LCTRL ESC     &kp LEFT_WIN  &mt LEFT_ALT GRAVE  &tog 6  &lt 3 TAB  &kp SPACE    &kp ENTER  &mo 2         &mo 6      &mo 8    &mo 4
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -126,10 +126,10 @@
 
         MOUSE {
             bindings = <
-&trans            &trans        &trans        &trans  &trans                       &trans  &trans    &trans    &trans    &trans
-&trans            &trans        &trans        &trans  &trans                       &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&kp LEFT_SHIFT    &trans        &trans        &trans  &trans                       &trans  &mkp MB4  &trans    &mkp MB5  &trans
-&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &trans  &trans  &kp SPACE    &trans  &trans            &trans    &trans    &trans
+&trans            &trans        &trans        &trans  &trans                       &trans    &trans    &trans    &trans    &trans
+&trans            &trans        &trans        &trans  &trans                       &mkp MB4  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&kp LEFT_SHIFT    &trans        &trans        &trans  &trans                       &mkp MB5  &trans    &trans    &trans    &trans
+&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &trans  &trans  &kp SPACE    &trans  &trans              &trans    &trans    &trans
             >;
         };
 
@@ -187,13 +187,13 @@
 
         ARROW {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans          &kp UP_ARROW    &trans           &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans          &trans          &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                  &trans          &trans           &trans
+&trans  &trans          &kp UP_ARROW    &trans           &trans                    &trans  &trans          &kp UP_ARROW    &trans           &trans
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans                    &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
+&trans  &trans          &trans          &trans           &trans                    &trans  &trans          &trans          &trans           &trans
+&trans  &trans          &trans          &trans           &trans  &trans    &trans  &trans                  &trans          &trans           &trans
             >;
 
-            sensor-bindings = <&re_kp LC(MINUS) LC(EQUAL)>;
+            sensor-bindings = <&re_kp RIGHT_ARROW LEFT_ARROW>;
         };
 
         OHNISHI {
@@ -205,6 +205,17 @@
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans          &kp UP_ARROW    &trans           &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans          &trans           &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans          &trans           &trans  &trans    &trans  &trans          &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
         };
     };
 };
