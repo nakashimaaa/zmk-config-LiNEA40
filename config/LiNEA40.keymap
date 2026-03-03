@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,
+            //スクロール方向を逆転,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -150,6 +150,8 @@
 &kp PG_UP         &trans            &kp HOME          &kp END           &trans                               &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp GRAVE      &kp BSLH
 &kp PG_DN         &trans            &trans            &trans            &kp LC(Z)   &kp LS(LC(Z))    &trans  &trans                    &trans             &trans         &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS)>;
         };
 
         //4
@@ -167,12 +169,12 @@
 
         //5
 
-        SCROLL {
+        GAME {
             bindings = <
-&kp TAB           &kp Q         &kp W         &kp E   &kp R                     &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_PLUS
-&kp ESC           &kp A         &kp S         &kp D   &kp F                     &kp KP_SLASH     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_MINUS
-&kp LEFT_SHIFT    &kp Z         &kp X         &kp C   &kp V                     &kp UNDER        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER
-&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &trans  &trans  &trans    &trans  &kp NUMBER_0                   &kp NUMBER_0  &kp DOT       &kp QUESTION
+&kp TAB           &kp Q         &kp W         &kp E   &kp R                              &kp T      &kp Y  &kp U   &kp I      &kp O
+&kp ESC           &kp A         &kp S         &kp D   &kp F                              &kp G      &kp H  &kp J   &kp K      &kp L
+&kp LEFT_SHIFT    &kp Z         &kp X         &kp C   &kp V                              &kp B      &kp N  &kp M   &kp COMMA  &kp PERIOD
+&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &trans  &lt 2 TAB  &kp SPACE    &kp ENTER  &lt 3 ESC         &kp F1  &kp F4     &kp F5
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
@@ -182,10 +184,10 @@
 
         WIRELESS {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                         &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans        &trans        &trans        &trans        &trans                               &trans          &trans        &trans        &trans        &trans
-&trans        &trans        &trans        &trans        &trans                               &trans          &trans        &trans        &trans        &bt BT_CLR
-&trans        &trans        &trans        &trans        &trans        &trans    &bootloader  &studio_unlock                &trans        &trans        &bt BT_CLR_ALL
+&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                         &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans          &trans        &trans        &trans        &trans                               &trans          &trans        &trans        &trans        &trans
+&trans          &trans        &trans        &trans        &trans                               &trans          &trans        &trans        &trans        &trans
+&bt BT_CLR_ALL  &bt BT_CLR    &trans        &trans        &trans        &trans    &bootloader  &studio_unlock                &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
