@@ -2,6 +2,7 @@
 
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -53,9 +54,11 @@
 };
 
 &trackball_listener {
+    input-processors = <&mouse_runtime_input_processor>;
     scroller {
         layers = <SCROLL>;
         input-processors =
+            <&scroll_runtime_input_processor>;
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             //スクロール方向を逆転,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
@@ -202,7 +205,7 @@
 &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                         &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans          &trans        &trans        &trans        &trans                               &trans          &trans        &trans        &trans        &trans
 &trans          &trans        &trans        &trans        &trans                               &trans          &trans        &trans        &trans        &trans
-&bt BT_CLR_ALL  &bt BT_CLR    &trans        &trans        &trans        &trans    &bootloader  &studio_unlock                &trans        &trans        &trans
+&bt BT_CLR_ALL  &bt BT_CLR    &trans        &trans        &trans        &studio_unlock    &bootloader  &studio_unlock                &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
